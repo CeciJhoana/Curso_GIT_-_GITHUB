@@ -305,3 +305,32 @@ Un repositorio remoto es una versión de tu proyecto de software alojada en un s
 
 *Listo ya tienes un repositorio remoto en GitHub*
 
+Tan pronto es creado el repositorio, GitHub muestra una página con una URL y algo de información sobre cómo configurar tu repositorio local.
+
+
+![create](img/nrepo.png)
+
+Una vez creado el repositorio remoto, inicialmente se encuentra vacío, en otras palabras, sin archivos y sin carpetas, por lo que se copiará la primera línea de comando proporcionada por el propio GitHub.
+Éste comando permitirá crear una dirección del repositorio remoto en la máquina local, siendo ejecutado a través del terminal y tendrá la siguiente estructura :
+
+        $ git remote add origin git@github.com:TuUsuarioDeGitHub/NombreRepositorio.git
+
+*Por lo que ya podremos vincular el repositorio local con el repositorio remoto*
+
+### ¿Cómo clonar un repositorio remoto creado previamente?
+
+1. Dirigirse al repositorio remoto y copiar su dirección ya sea la dirección HTTPS o SSH
+<pre>Dato curioso:
+Una dirección HTTPS es un enlace seguro que utiliza el protocolo de transferencia de hipertexto seguro para acceder a recursos en línea, como sitios web o repositorios de código en GitHub. 
+
+SSH (Secure Shell) es un protocolo de red que permite a los usuarios acceder de forma segura a una computadora remota y realizar operaciones de forma segura, como el acceso a repositorios de código en GitHub. 
+
+La diferencia principal está en la forma en que se autentica la conexión: HTTPS utiliza certificados SSL/TLS para autenticar, mientras que SSH utiliza claves de acceso para la autenticación. SSH tiende a ser más seguro y eficiente para el trabajo con repositorios de código.</pre>
+
+![code](img/code.png)
+
+2. Ya teniendo la dirección url del repositorio remoto, nos dirigimos a nuestra terminal o linea de comando y utilizar el comando:
+
+                git clone URL_del_repositorio_remoto
+
+3. Al presionar Enter. Git descargará una copia del repositorio remoto en tu computadora y configurará automáticamente un vínculo entre tu repositorio local y el repositorio remoto.
