@@ -20,7 +20,7 @@ Linux.
 * Git, al ser un sistema distribuido, aloja una copia completa del repositorio en cada máquina local que está trabajando en el código. Además, puedes tener uno o varios repositorios remotos para
 sincronizarlos
 
-![git](img/imgGit.jpeg)
+![git](img/git.png)
 
 ### Instalación de GIT
 **Linux (Debian/Ubuntu)**
@@ -84,11 +84,11 @@ Una vez instalado Git, debes configurarlo con tu nombre y correo electrónico. E
 ### Iniciar un nuevo proyecto en GIT
 Hay dos manera o dos situaciones en las que quieras inicializar un proyecto en GIT:
 
-**Primera:** Crear un proyecto desde cero (Es decir, crear un repositorio
+**Primero:** Crear un proyecto desde cero (Es decir, crear un repositorio
 local).
 
         git init nuevo-proyecto 
-         cd nuevo-proyecto
+        cd nuevo-proyecto
 
 Esto creará una carpeta configurada y vacía con el nombre que le has indicado.
 
@@ -137,7 +137,7 @@ Ocurre esto:
         ejemplo.txt
 
 ## ¿Qué hace un **git commit**?
-    Un "commit" en Git esencialmente captura una instantánea de los proyectos que están en tu "staging area" (área de preparación) en ese >momento, proporcionando un punto de referencia clara en la historia de tu proyecto que puedes volver a visitar y comparar o restaurar más tarde.
+Un "commit" en Git esencialmente captura una instantánea de los proyectos que están en tu "staging area" (área de preparación) en ese >momento, proporcionando un punto de referencia clara en la historia de tu proyecto que puedes volver a visitar y comparar o restaurar más tarde.
 ### ¿Còmo realizar un Commit?
 1. Abrir terminal
 2. Navegar hasta el proyecto
@@ -198,13 +198,63 @@ Esto mostrará todas las ramas y resaltará en cuál estás actualmente.
 
 ![new_rama](img/new_rama.png)
 
+### ¿Qué es un Merge?
+
+Un merge en Git es la acción de combinar los cambios de una rama con otra rama, generalmente la rama principal del proyecto. 
+
+* Esto se hace para integrar el trabajo realizado en una rama de desarrollo con el resto del código, permitiendo que los cambios se fusionen de manera ordenada y sin conflictos en el proyecto principal.
+
+**Ventaja**
+ Es útil porque permite a los equipos trabajar en paralelo en diferentes aspectos del proyecto y luego unir sus contribuciones de manera controlada, manteniendo un historial de cambios claro y facilitando la colaboración entre desarrolladores.
+
+![merge](img/merge.png)
+
+### ¿Cómo realizar un merge?
+
+* Paso1: Asegurarse de estar en la rama que queremos fucionar los cambios. 
+
+Es decir, si de nuestra rama local **"rama1"** queremos funionar a la rama principal **"main"**, debemos encontrarnos en la rama **main**.
+
+* Pas2: Fusionar los cambios:
+
+        git merge rama1
+
+* Paso3: Git intentará fusionar los cambios automáticamente.
+
+        Si (conflicto):
+                 Resolver conflicto()
+        Si no:
+                Los cambios de la otra rama se fusionarán en la rama actual y podrás continuar trabajando en ella.
 
 
+### ¿Qué es un conflicto en Git y cómo resolver?
 
+Un conflicto en Git ocurre cuando dos cambios diferentes se realizan en las mismas líneas de un archivo en diferentes ramas. 
 
+Esto puede suceder al fusionar ramas con cambios conflictivos. Git no puede determinar automáticamente cuál cambio debería prevalecer, por lo que te pide que resuelvas manualmente estos conflictos. 
 
+![conflicto_git](img/conflicto.jpeg)
 
+### Resolver conflicto()
 
+* Localizar el archivo que tiene conflictos. Git nos mostrará los conflictos entre 
+
+        <<<<<<< HEAD, que marca el comienzo de tus cambios actuales, 
+        =======, que separa tus cambios de los de la otra rama, 
+        y >>>>>>>, que marca el final de los cambios de la otra rama.
+
+* Decidir qué cambios quieres conservar. Edita el archivo para eliminar las marcas de conflicto y dejar solo el contenido que deseas mantener.
+
+* Guardar los cambios realizados en el archivo.
+
+* Después de resolver todos los conflictos, añade los archivos modificados con 
+
+        git add nombre_del_archivo_conflicto.
+
+* Hacer un commit con   
+
+        git commit -m "Mensaje de commit". 
+Esto finaliza la fusión y resuelve el conflicto.
 
 
 
