@@ -1,6 +1,6 @@
 # CURSO GIT & GITHUB
 ## Descripción del curso
-    Este documento contiene mis notas del curso de Git y GitHub. Está diseñado para proporcionar una referencia rápida y un repaso a los conceptos clave de Git, así como las prácticas comunes para usar GitHub efectivamente en proyectos de desarrollo de software.
+Este documento contiene mis notas del curso de Git y GitHub. Está diseñado para proporcionar una referencia rápida y un repaso a los conceptos clave de Git, así como las prácticas comunes para usar GitHub efectivamente en proyectos de desarrollo de software.
 ## Índice
 1. [Introducción a Git](#introducción-a-git)
 2. [States y Commits](#states-y-commits)
@@ -14,9 +14,9 @@
 
 ## Introducción a GIT
 ### ¿Qué es GIT?
-    Git es un un sistema distribuido de control de versiones, gratuito y de código abierto
-    bajo licencia GPLv2. Fue diseñado originalmente por Linus Torvalds12, el creador de
-    Linux.
+Git es un un sistema distribuido de control de versiones, gratuito y de código abierto
+bajo licencia GPLv2. Fue diseñado originalmente por Linus Torvalds12, el creador de
+Linux.
 * Git, al ser un sistema distribuido, aloja una copia completa del repositorio en cada máquina local que está trabajando en el código. Además, puedes tener uno o varios repositorios remotos para
 sincronizarlos
 
@@ -44,21 +44,25 @@ sincronizarlos
 
 1. Instala Homebrew si aún no lo tienes, ejecutando:
 
-<pre> /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" </pre>
+         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" 
 2. Una vez que Homebrew está instalado, instala Git con:
 
-<pre>brew install git</pre>
+          brew install git  
 
 3. Verifica la instalación con:
-<pre>git --version</pre>
+                
+         git --version
 
 ### Configuración de GIT
 Una vez instalado Git, debes configurarlo con tu nombre y correo electrónico. Esta información se utilizará en los commits que realices.
 
 1. Configura tu nombre:
-    <pre> git config --global user.name "Tu Nombre" </pre>
+
+         git config --global user.name "Tu Nombre"
+
 2. Configura tu correo electrónico:
-    <pre> git config --global user.email "tuemail@example.com" </pre>
+
+        git config --global user.email "tuemail@example.com" 
 **Nota:** El correo debe ser el mismo que usaras para la cuenta de GitHub.
 
 ### Otras configuraciones útiles
@@ -70,23 +74,28 @@ Una vez instalado Git, debes configurarlo con tu nombre y correo electrónico. E
     ```
 
 * Ver todas las configuraciones de Git:
-    <pre> git config --list </pre>
+
+        git config --list
+
 * Ayuda adicional y más opciones de configuración: 
-    <pre> git config --help </pre>
+
+        git config --help 
 
 ### Iniciar un nuevo proyecto en GIT
 Hay dos manera o dos situaciones en las que quieras inicializar un proyecto en GIT:
 
 **Primera:** Crear un proyecto desde cero (Es decir, crear un repositorio
 local).
-    <pre>git init nuevo-proyecto 
-         cd nuevo-proyecto </pre>
+
+        git init nuevo-proyecto 
+         cd nuevo-proyecto
+
 Esto creará una carpeta configurada y vacía con el nombre que le has indicado.
 
 **Segundo:** Iniciar un repositorio de una carpeta ya existente.
 
-<pre>   cd directorio del proyecto que ya existe
-   git init</pre>
+     cd directorio del proyecto que ya existe
+     git init
 
 *A partir de aquí ya tienes tu repositorio inicializado. Eso sí, sólo de forma local.*
 
@@ -105,45 +114,100 @@ Esto creará una carpeta configurada y vacía con el nombre que le has indicado.
 Ejemplo:
 
 Tenemos un archivo nuevo llamado ejemplo.txt y otro archivo existente antiguo.txt que hemos modificado. Si ejecutamos 
-<pre> git status </pre>
+
+        git status
+
 Ocurre esto:
-<pre> 
-    On branch master
-    Changes to be committed:
-    (use "git reset HEAD <file>..." to unstage)
 
-    modified:   antiguo.txt
+        On branch master
+        Changes to be committed:
+        (use "git reset HEAD <file>..." to unstage)
 
-    Changes not staged for commit:
-    (use "git add <file>..." to update what will be committed)
-    (use "git checkout -- <file>..." to discard changes in working directory)
+        modified:   antiguo.txt
 
-    modified:   antiguo.txt
+        Changes not staged for commit:
+        (use "git add <file>..." to update what will be committed)
+        (use "git checkout -- <file>..." to discard changes in working directory)
 
-    Untracked files:
-    (use "git add <file>..." to include in what will be committed)
+        modified:   antiguo.txt
 
-    ejemplo.txt
+        Untracked files:
+        (use "git add <file>..." to include in what will be committed)
 
-</pre>
+        ejemplo.txt
 
 ## ¿Qué hace un **git commit**?
     Un "commit" en Git esencialmente captura una instantánea de los proyectos que están en tu "staging area" (área de preparación) en ese >momento, proporcionando un punto de referencia clara en la historia de tu proyecto que puedes volver a visitar y comparar o restaurar más tarde.
 ### ¿Còmo realizar un Commit?
 1. Abrir terminal
 2. Navegar hasta el proyecto
-<pre>cd ruta/al/proyecto</pre>
+
+        cd ruta/al/proyecto
+
 3. Verificar los cambios
-<pre>git status</pre>
+
+         git status
+
 4. Seleccionar archivos para el commit es decir añadir los archivos al área de staging
-<pre> git add nombre_del_archivo.ext </pre>
+
+
+         git add nombre_del_archivo.ext 
+
 O añadir todos los archivos modificados: 
-<pre> git add . </pre>
-5. Crear el commit <pre>git commit -m "Descripción clara y concisa de los cambios realizados"</pre> 
+
+         git add . 
+
+5. Crear el commit 
+
+        git commit -m "Descripción clara y concisa de los cambios realizados"
+
 *Esto en caso de añadir directamente el mensaje sin abrir el editor. lo cual resulta lo mas sencillo y comodo de realizar un commit*
 
-6. Revizar el historial de los commits <pre> git log </pre>
+6. Revizar el historial de los commits 
+
+        git log
+
+## Ramas, Merge y conflictos
+
+### ¿Qué es una rama y para qué sirve?
+
+Una rama en Git es como una línea separada de desarrollo dentro de un proyecto de software. Por lo que cuando estamos trabajando en una función nueva para una aplicación: en lugar de hacer esos cambios directamente en la versión principal de la aplicación, creas una nueva "rama" donde se pueden hacer los cambios de forma segura sin afectar el trabajo principal. 
+* Esto permite experimentar y trabajar en múltiples características al mismo tiempo como también colaborar con otros desarrolladores de manera más organizada. 
+* Una vez que los cambios están listos y probados, se podrá fusionar esa rama de vuelta a la rama principal para incorporar las mejoras al proyecto principal.
+
+![ramas_git](img/ramas.png)
+
+### Pasos para crear una Rama en GIT
+* Paso1: Abre tu terminal o línea de comandos en la carpeta de tu repositorio Git.
+* Paso2: Asegúrate de estar en la rama principal ejecutando el comando 
+
+        git branch. 
+
+Esto mostrará todas las ramas y resaltará en cuál estás actualmente.
+![git_branch](img/git_branch.png)
+
+* Paso3: Crear la rama con el comando:
+
+        git branch nombre_de_nueva_rama
+
+* Paso4: Cambiar de rama
+
+        git switch nombre_de_nueva_rama
+
+*¡Listo! Ahora estamos en la nueva rama y podemos comenzar a trabajar en ella. Puedemos verificarlo ejecutando **git branch** nuevamente y verás un asterisco (*) al lado de la rama en la que estás actualmente.*
+
+![new_rama](img/new_rama.png)
 
 
 
-    
+
+
+
+
+
+
+
+
+
+
+
