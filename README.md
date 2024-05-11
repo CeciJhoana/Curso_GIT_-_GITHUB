@@ -256,8 +256,52 @@ Esto puede suceder al fusionar ramas con cambios conflictivos. Git no puede dete
         git commit -m "Mensaje de commit". 
 Esto finaliza la fusión y resuelve el conflicto.
 
+### ¿Cómo eliminar una rama?
 
+* Paso1: Estar en una rama diferente a la que deseamos eliminar
+* Paso2: Eliminar
+        
+        git branch -d nombre_rama_a_eliminar
+* Si la rama que intentamos eliminar tiene cambios que aún no han sido fusionados, Git nos advertirá y no eliminará la rama. 
+**En ese caso**
 
+        git branch -D nombre_rama_a_eliminar
 
+## GITHUB
 
+GitHub es una plataforma en línea donde los desarrolladores pueden almacenar y compartir su código de manera colaborativa.
+
+**Ventajas**
+
+ 1.Permite a los equipos de programadores trabajar juntos en proyectos de software.
+ 
+ 2.Gestionar versiones de código. 
+ 
+ 3.Realizar seguimiento de problemas. 
+ 
+ 4.Coordinar el trabajo mediante herramientas como solicitudes de extracción y control de versiones utilizando Git.
+
+ ![github](img/github.jpeg)
+
+ ### ¿Son Git y GitHub lo mismo?
+ No, Git y GitHub no son lo mismo. Git es un sistema de control de versiones distribuido, mientras que GitHub es una plataforma en línea que utiliza Git para alojar repositorios de código.
+
+![git_github](img/git-github.png)
+
+### ¿Qué es un repositorio remoto?
+
+Un repositorio remoto es una versión de tu proyecto de software alojada en un servidor en línea, 
+
+### Creando un repositorio remoto en GitHub
+1. Accede a [GitHub.com](https://github.com/) en un navegador y haz clic en el + de la parte superior derecha de la pantalla para crear un nuevo repositorio.
+
+![add_repo](img/inigithub.jpeg)
+
+2. Elige un nombre para tu repositorio. No tiene por qué ser el mismo nombre que la carpeta del proyecto.
+
+3.Se te presentarán opciones, pero no necesitas cambiar ninguna de las predeterminadas. Desplázate hacia abajo y pulsa el botón Create Repository.
+
+![create](img/create.png)
+
+*Listo ya tienes un repositorio remoto en GitHub*
 
