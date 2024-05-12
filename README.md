@@ -578,6 +578,116 @@ El comando git revert HEAD~9 es una forma de revertir el noveno commit anterior 
          git checkout identificador_del_commit
 
 
-## Hooks, Alias y tru
+## Hooks, Alias y trucos de Git
+
+### ¿Qué son los Hook?
+
+Los "hooks" son como pequeños scripts o acciones que Git puede ejecutar automáticamente cuando ocurre un evento determinado, como hacer un commit o realizar un push. Estos scripts se colocan dentro de una carpeta llamada .git/hooks en tu repositorio Git.
+
+### Hooks disponibles
+
+![hook](img/hook.png)
+
+### ¿Cómo crear mi propio hook?
+
+* **Identifica el evento para el cual deseas crear el hook:**
+
+ Decide en qué momento específico del flujo de trabajo de Git deseas que se ejecute tu hook. Algunos eventos comunes incluyen pre-commit, post-commit, pre-push, entre otros.
+
+* **Navega hasta la carpeta de hooks en tu repositorio Git:**
+
+ Abre la terminal o línea de comandos y navega hasta la carpeta .git/hooks dentro del repositorio Git. Puedes hacerlo utilizando el comando cd.
+
+* **Crea un nuevo archivo para tu hook:**
+
+ Utiliza tu editor de texto favorito para crear un nuevo archivo con el nombre del evento de hook que deseas crear. Por ejemplo, si deseas crear un hook para el evento pre-commit, puedes nombrar tu archivo pre-commit.
+
+* **Escribe el código para tu hook:**
+
+ Abre el archivo que acabas de crear y escribe el código que deseas que se ejecute cuando ocurra el evento específico. Puedes usar cualquier lenguaje de programación que desees, como bash, Python, Node.js, etc.
+
+* **Guarda el archivo y hazlo ejecutable (si es necesario):**
+
+ Guarda los cambios en tu archivo y asegúrate de que tenga permisos de ejecución si estás utilizando un sistema operativo que lo requiere (como Linux o macOS). Puedes hacerlo ejecutando el comando chmod +x nombre-del-hook.
+
+* **Prueba tu hook:**
+
+ Una vez que hayas creado tu hook, puedes probarlo realizando la acción que activa el evento específico. Por ejemplo, si has creado un hook pre-commit, intenta realizar un commit en tu repositorio y observa si se ejecuta tu hook.
+
+### ¿Qué es un Git Alias?
+
+Un Alias en Git es una manera de crear un atajo o un nombre corto para un comando Git largo o complejo. En lugar de tener que escribir el comando completo cada vez que lo necesitemos, puedemos asignarle un alias para que puedamos usar ese alias en su lugar.
+
+### Crear un Git Alias
+
+         git config --global alias.nombre_del_alias commando
+
+**Ejemplo**: Para crear un alias llamado "co" para el comando checkout, puedemos hacerlo con el siguiente comando:
+
+         git config --global alias.co 'checkout'
+
+### Eliminar Git ALias
+
+         git config --global --unset alias.nombre_del_alias
+
+**Ejemplo:** Eliminar el alias "co" que configuramos anteriormente, puedemos hacerlo con el siguiente comando:
+
+         git config --global --unset alias.co
+
+
+### Trucos en Git
+
+Los trucos en git nos permiten mejorar el flujo de trabajo con Git o nos permiten realizar ciertas tareas de manera más eficiente.
+
+**RESERVA STASH**
+
+* Oculta los cambios no confirmados, guardándolos en una pila de cambios temporales llamada "stash" o reserva
+
+        git stash
+
+* Forma de guardar temporalmente los cambios en el directorio de trabajo, incluidos los archivos que están sin rastrear (untracked files), en la pila de stash. 
+
+         git stash -u 
+
+* Permite recuperar y aplicar rápidamente los cambios que guardaste previamente en el stash
+
+         git stash pop
+        
+* Nos permite cambios introducidos por el commit seleccionado se aplicarán como nuevos commits en la rama actual.
+
+        git cherry-pick identificador_del_commit
+
+**Dectectar commits con bug:**
+
+         git bisect
+
+Marcar un commit como "bueno" y otro como "malo":
+
+        git bisect start  # Inicia el proceso de bisect
+        git bisect bad    # Marca el commit actual como "malo"
+        git bisect good identificador_commit  # Marca un commit conocido como "bueno"
+
+Revisar y marcar cada commit intermedio:
+
+Git ahora seleccionará automáticamente un commit en el medio entre los commits "bueno" y "malo" y preguntará si el problema está presente en ese commit. Tendremos que revisar el código en ese commit y marcarlo como "bueno" o "malo" según corresponda:
+
+        git bisect bad    # Si el problema está presente en el commit actual
+        git bisect good   # Si el problema no está presente en el commit actual
+
+Identificar el commit responsable:
+
+        b725ea1f1eb50e92dabec42b5c6d023bd641f996 is the first bad commit
+
+Finalizar el proceso de bisect:
+ Reinicia el estado del repositorio# Reinicia el estado del repositorio
+
+         git bisect reset  
+
+
+
+
+
+
+
 
 
