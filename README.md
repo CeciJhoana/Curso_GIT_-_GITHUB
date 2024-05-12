@@ -477,5 +477,107 @@ Para añadir una rama remota con git flow:
 
 *Ya podremos inicializar nuestro flujo de trabajo*
 
+## Buenas Prácticas en Git
+
+### ¿Con què frecuencia deberìa realizar un Commit?
+Realizar commits pequeños realizando funcionalidades pequeñas
+Esto no significa realizar commits sin sentido, como solo borrar un espacio y hacer commit.
+### ¿Cómo escribir Buenos commits?
+Usar hasta 50 caracteres como máximo para un mensaje de commit
+
+Por lo que las siguientes palabras nos ayudarán a redactar mejor los mensajes:
+
+* Add: Significa que se añade un nuevo archivo.
+
+* Change: Significa que se modifica un archivo existente.
+
+* Fix: Significa que se arregla un bug.
+
+* Remove: Significa que se elimina un archivo existente.
+
+### Escribir buenos nombres para las ramas
+
+Usar el nombre de la acción que se realiza en la rama como:
+
+* bug: Cambios de código para arreglar un bug conocido.
+
+*feature: Desarrollo de una nueva característica.
+
+*experiment: Experimentos que nunca serán fusionados.
+
+* hotfix: Cambio rápido de un error crítico.
+
+Ejemplo: 
+        
+        feature/blog
+        feature/about
+
+
+## Deshacer Cambios
+
+### ¿En qué momentos deshacemos cambios?
+
+* Cuando el proyecto ya no funciona y queremos volver a un estado sin conflictos y empezr de nuevo.
+* Cuando queremos recuperar una parte del codigo anteriormente modificado
+* O cuando queremos recuperar archivos eliminados
+
+### Comandos destructivos y no destructivos
+
+ **¿Qué es un comando destructivo y qué es un comando no destructivo en GI?**
+
+ * Un comando destructivo es aquel que puede alterar o eliminar permanentemente el historial de cambios o datos en el repositorio. 
+ * un comando no destructivo es aquel que no altera ni elimina permanentemente el historial de cambios o datos en el repositorio.
+
+### Comandos destructivos
+
+ ### Git Reset
+ se utiliza para mover la punta de una rama a un commit específico, lo que puede tener diferentes efectos según la opción que se le pase.
+
+* **Es el reset más destructivo.** Mueve la punta de la rama al commit especificado y deshace todos los cambios en el área de preparación (staging) y en el directorio de trabajo. Todos los cambios no confirmados se eliminarán permanentemente.
+
+        git reset --hard id_commit
+
+* Mueve la punta de la rama al commit especificado, pero mantiene los cambios en el área de preparación (staging). Esto significa que los cambios de los archivos no se verán afectados y seguirán estando preparados para ser confirmados nuevamente.
+
+        git reset --soft id_commit
+
+### Comandos no destructivos
+
+### Git Revert
+
+Se utiliza para deshacer un commit específico creando un nuevo commit que revierte los cambios introducidos por el commit que deseamos deshacer. 
+
+**Ventaja**
+
+El uso de git revert es útil cuando deseas deshacer un commit específico sin eliminar la historia de cambios y sin afectar a otros colaboradores del repositorio que puedan haber basado su trabajo en los cambios que deseas deshacer.
+
+Comando:
+* Se utiliza cuando deseas deshacer un commit específico mientras mantienes un historial de cambios coherente.
+
+         git revert id_commit
+
+* Forma conveniente de revertir el commit más reciente en tu rama actual. 
+
+         git revert HEAD
+         git revert HEAD~9
+
+El comando git revert HEAD~9 es una forma de revertir el noveno commit anterior al commit actual en tu rama. 
+        
+### Git Checkout
+
+* Se utiliza para hacer cambios en los archivos
+
+        git checkout -- nombre_de_archivo
+
+* Deshacer cambios en archivos específicos de un commit anterior
+
+        git checkout identificador_del_commit -- nombre_de_archivo
+
+* Permitiendonos recuperar codigo de commits especificos
+
+         git checkout identificador_del_commit
+
+
+## Hooks, Alias y tru
 
 
