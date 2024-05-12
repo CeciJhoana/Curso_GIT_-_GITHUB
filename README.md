@@ -334,3 +334,96 @@ La diferencia principal está en la forma en que se autentica la conexión: HTTP
                 git clone URL_del_repositorio_remoto
 
 3. Al presionar Enter. Git descargará una copia del repositorio remoto en tu computadora y configurará automáticamente un vínculo entre tu repositorio local y el repositorio remoto.
+
+## Push, Pull y Pull Requests
+
+### ¿Qué es un Push?
+Un "push" en Git es el acto de enviar tus cambios locales a un repositorio remoto. Esto actualiza el estado del repositorio remoto con tus cambios locales. 
+
+**Para ejecutar un "push", sigue estos pasos:**
+
+* Paso1: Asegúrase de haber realizado y guardado los cambios que deseas enviar al repositorio remoto.
+
+* Paso2: Abrir la terminal o línea de comandos.
+
+* Paso3: Utilizar el comando git push seguido del nombre del repositorio remoto y la rama que deseas enviar.
+
+         git push nombre_del_repositorio_remoto nombre_de_la_rama
+
+  Si queremos establecer una conexión entre la rama local y la rama remota utilizaremos:
+
+         git push --set-upstream nombre_de_la_rama  
+
+  Esto nos ayudarà que para el pròximo push solo tengamos que poner el comando git push sin la necesidad de especificar que rama ya que están conecctados.
+         git push
+
+*Listo si presionamos Enter. Git enviará tus cambios locales al repositorio remoto especificado.*
+### Experimentos con git push
+* Establecer la conexión entre la rama local y la rama remota de forma predeterminada -u o --set-upstream:
+
+         git push -u origin nombre_de_la_rama
+
+* Para enviar todas las ramas locales que tengan una rama remota asociada en el repositorio remoto.
+        
+        git push --all
+
+*Para **forzar** el envío de cambios locales al repositorio remoto, sobrescribiendo cualquier historial existente en la rama remota con el historial de la rama local.
+
+         git push --force
+         git push -f
+
+Es una operación potencialmente peligrosa, ya que puede causar la pérdida de cambios si no se utiliza con precaución.
+
+* Para **eliminar** una rama remota en el repositorio remoto "origin".
+
+        git push -d origin nombre_rama
+
+ *Es importante tener en cuenta que este comando no elimina la rama local correspondiente en tu máquina, solo elimina la rama remota en el repositorio remoto.*
+### ¿Qué es git pull?
+El comando git pull se utiliza para recuperar los cambios del repositorio remoto y fusionarlos automáticamente con tu rama local.
+
+         git pull
+
+### Experimentos con git pull
+
+* Para recuperar los cambios de la rama remota llamada main en el repositorio remoto y fusionarlos automáticamente con tu rama local actual. 
+
+        git pull origin main
+
+* Para traer los cambios hacia todas las ramas existentes
+
+        git pull --all
+
+* Para establecer una relación entre una rama local y una rama remota
+
+        git pull --set-upstream origin nombre_de_rama
+
+Esto significa que cuando hagas un git pull en la rama local nombre_de_rama, Git sabrá que debe recuperar los cambios de la rama remota origin/nombre_de_rama.
+
+* Para traer varias rama hacia una sola indicando que ramas queremos traerlas
+        
+        git pull origin rama1 rama2 ramaN
+
+### ¿Qu+e es una Pull Request?
+
+Una pull request o PR es una solicitud que un colaborador o miembro del equipo hace a los propietarios o compañeros del equipo de un repositorio en Git para que revisen y consideren los cambios realizados en una rama de código específica.
+
+*Las pull requests proporcionan un espacio para revisar el código, realizar pruebas y comentarios antes de fusionar los cambios, lo que ayuda a mantener la calidad del código y facilita la colaboración entre los miembros del equipo.*
+
+### ¿Cómo hacer una pull request?
+
+Una vez que envíe los cambios al repositorio, el botón Comparar y solicitar extracción aparecerá en GitHub.
+
+![pr](img/pr.jpeg)
+
+Click it and you'll be taken to this screen:
+
+![create_pr](img/cpr.jpeg)
+
+Abra una solicitud de extracción haciendo clic en el botón Create pull request . Esto permite a los colaboradores del repositorio revisar su contribución. Desde aquí, pueden fusionarlo si está bien, o pueden pedirle que haga algunos cambios.
+
+### ¿Cómo hacer una buena Pull Request?
+
+* Hacer pull request con commit pequeños ya que nos permite una mejor revisión entre todo el equipo.
+
+* Realizar una buena descripción de la pull request: podemos usar imagenes si es posible o pasos para poder ejecutar la nueva funcionalida que esta intentado fucionar.
