@@ -427,3 +427,55 @@ Abra una solicitud de extracción haciendo clic en el botón Create pull request
 * Hacer pull request con commit pequeños ya que nos permite una mejor revisión entre todo el equipo.
 
 * Realizar una buena descripción de la pull request: podemos usar imagenes si es posible o pasos para poder ejecutar la nueva funcionalida que esta intentado fucionar.
+
+## Git Flow
+
+### ¿Qué es Git Flow?
+
+Git Flow es un modelo de flujo de trabajo para Git que proporciona un conjunto de reglas y convenciones para organizar y gestionar el desarrollo de software de manera estructurada.
+
+* Este modelo se basa en el concepto de tener ramas específicas para diferentes tipos de cambios y fases del desarrollo de software. 
+
+**Componentes principales de Git FLow**
+
+**Rama master:** Representa la rama principal del proyecto.
+
+**Rama develop:** Es la rama de integración principal donde se fusionan todas las características completadas.
+
+**Ramas de características (feature branches):** Se crean a partir de la rama develop y se utilizan para desarrollar nuevas características o funcionalidades. 
+
+**Ramas de publicación (release branches):** Se crean a partir de la rama develop y se utilizan para preparar una nueva versión para el lanzamiento. 
+
+**Ramas de hotfix (hotfix branches):** Se utilizan para corregir errores críticos en producción. Se crean a partir de la rama master.
+
+![git_flow](img/gitflow.png)
+
+## ¿Cómo inicializar git flow?
+
+Para inicializar poner:
+
+Debemos instalar git flow
+
+**Linux**
+
+        apt-get install git-flow
+
+**Windows**
+
+        wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
+
+Inicializar git flow con:
+
+        git flow init
+Te aparecerá una serie de opciones por las cuales tienes que aceptar todas:
+
+![git_flow](img/finit.jpeg)
+
+Para añadir una rama remota con git flow:
+
+        git flow feature start nombre_de_la_feature
+
+*Ya podremos inicializar nuestro flujo de trabajo*
+
+
+
