@@ -1,7 +1,7 @@
 # CURSO GIT & GITHUB
-## Descripción del curso
-Este documento contiene mis notas del curso de Git y GitHub. Está diseñado para proporcionar una referencia rápida y un repaso a los conceptos clave de Git, así como las prácticas comunes para usar GitHub efectivamente en proyectos de desarrollo de software.
-## Índice
+## Descripción del curso 💯
+📄 Este documento contiene mis notas del curso de Git y GitHub. Está diseñado para proporcionar una referencia rápida y un repaso a los conceptos clave de Git, así como las prácticas comunes para usar GitHub efectivamente en proyectos de desarrollo de software.
+## Índice ⭐
 1. [Introducción a Git](#introducción-a-git)
 2. [States y Commits](#states-y-commits)
 3. [Ramas, Merge y Conflictos](#ramas-merge-y-conflictos)
@@ -13,7 +13,8 @@ Este documento contiene mis notas del curso de Git y GitHub. Está diseñado par
 9. [Hooks, Alias y Trucos de Git](#hooks-alias-y-trucos-de-git)
 
 ## Introducción a GIT
-### ¿Qué es GIT?
+### ¿Qué es GIT? 🚀
+
 Git es un un sistema distribuido de control de versiones, gratuito y de código abierto
 bajo licencia GPLv2. Fue diseñado originalmente por Linus Torvalds12, el creador de
 Linux.
@@ -23,7 +24,7 @@ sincronizarlos
 ![git](img/git.png)
 
 ### Instalación de GIT
-**Linux (Debian/Ubuntu)**
+**Linux (Debian/Ubuntu)** 🐧
 * Abre una terminal.
 * Actualiza tu paquete de gestión
 * Instala GIT
@@ -53,19 +54,20 @@ sincronizarlos
                 
          git --version
 
-### Configuración de GIT
+### Configuración de GIT 🔨
 Una vez instalado Git, debes configurarlo con tu nombre y correo electrónico. Esta información se utilizará en los commits que realices.
 
-1. Configura tu nombre:
+1. Configura tu nombre:  👩 
 
          git config --global user.name "Tu Nombre"
 
-2. Configura tu correo electrónico:
+2. Configura tu correo electrónico: 📫
 
         git config --global user.email "tuemail@example.com" 
-**Nota:** El correo debe ser el mismo que usaras para la cuenta de GitHub.
 
-### Otras configuraciones útiles
+💥 **Nota:** El correo debe ser el mismo que usaras para la cuenta de GitHub.
+
+### Otras configuraciones útiles ✅
 * Establecer el editor por defecto para Git (por ejemplo, Nano, Atom, o VS Code):
     ```bash
     git config --global core.editor "nano"
@@ -73,18 +75,18 @@ Una vez instalado Git, debes configurarlo con tu nombre y correo electrónico. E
     git config --global core.editor "atom"
     ```
 
-* Ver todas las configuraciones de Git:
+* Ver todas las configuraciones de Git: 📝
 
         git config --list
 
-* Ayuda adicional y más opciones de configuración: 
+* ❓ Ayuda adicional y más opciones de configuración: 
 
         git config --help 
 
-### Iniciar un nuevo proyecto en GIT
+### Iniciar un nuevo proyecto en GIT 🎯
 Hay dos manera o dos situaciones en las que quieras inicializar un proyecto en GIT:
 
-**Primero:** Crear un proyecto desde cero (Es decir, crear un repositorio
+1️⃣ **Primero:** Crear un proyecto desde cero (Es decir, crear un repositorio
 local).
 
         git init nuevo-proyecto 
@@ -92,7 +94,7 @@ local).
 
 Esto creará una carpeta configurada y vacía con el nombre que le has indicado.
 
-**Segundo:** Iniciar un repositorio de una carpeta ya existente.
+2️⃣  **Segundo:** Iniciar un repositorio de una carpeta ya existente.
 
      cd directorio del proyecto que ya existe
      git init
@@ -100,7 +102,7 @@ Esto creará una carpeta configurada y vacía con el nombre que le has indicado.
 *A partir de aquí ya tienes tu repositorio inicializado. Eso sí, sólo de forma local.*
 
 ## states y commits
-### Los tres estados de git
+### Los tres estados de git ✨
 * **Modificado (Modified)**
     El estado modificado indica que has cambiado un archivo pero aún no lo has guardado en tu base de datos de Git.
 * **Preparado (Staged)**
@@ -109,7 +111,7 @@ Esto creará una carpeta configurada y vacía con el nombre que le has indicado.
     Una vez que los cambios están preparados, los puedes consolidar. El estado consolidado significa que los datos están almacenados de manera segura en tu base de datos local de Git.
     ![Estados de git](img/estodosGit.jpeg)
 
-### Usando git status
+### Usando git status  🍨 
 **git status:** Ayuda a entender en qué estado se encuentran tus archivos y te guía sobre qué acciones puedes realizar a continuación.  
 Ejemplo:
 
@@ -117,7 +119,7 @@ Tenemos un archivo nuevo llamado ejemplo.txt y otro archivo existente antiguo.tx
 
         git status
 
-Ocurre esto:
+Ocurre esto: 📊
 
         On branch master
         Changes to be committed:
@@ -136,9 +138,9 @@ Ocurre esto:
 
         ejemplo.txt
 
-## ¿Qué hace un **git commit**?
+## ¿Qué hace un **git commit**? 🌟
 Un "commit" en Git esencialmente captura una instantánea de los proyectos que están en tu "staging area" (área de preparación) en ese >momento, proporcionando un punto de referencia clara en la historia de tu proyecto que puedes volver a visitar y comparar o restaurar más tarde.
-### ¿Còmo realizar un Commit?
+### ¿Cómo realizar un Commit? 📌
 1. Abrir terminal
 2. Navegar hasta el proyecto
 
@@ -169,7 +171,7 @@ O añadir todos los archivos modificados:
 
 ## Ramas, Merge y conflictos
 
-### ¿Qué es una rama y para qué sirve?
+### ¿Qué es una rama y para qué sirve? 🌳
 
 Una rama en Git es como una línea separada de desarrollo dentro de un proyecto de software. Por lo que cuando estamos trabajando en una función nueva para una aplicación: en lugar de hacer esos cambios directamente en la versión principal de la aplicación, creas una nueva "rama" donde se pueden hacer los cambios de forma segura sin afectar el trabajo principal. 
 * Esto permite experimentar y trabajar en múltiples características al mismo tiempo como también colaborar con otros desarrolladores de manera más organizada. 
@@ -177,20 +179,20 @@ Una rama en Git es como una línea separada de desarrollo dentro de un proyecto 
 
 ![ramas_git](img/ramas.png)
 
-### Pasos para crear una Rama en GIT
+### Pasos para crear una Rama en GIT 🌼
 * Paso1: Abre tu terminal o línea de comandos en la carpeta de tu repositorio Git.
 * Paso2: Asegúrate de estar en la rama principal ejecutando el comando 
 
         git branch. 
 
-Esto mostrará todas las ramas y resaltará en cuál estás actualmente.
+Esto mostrará todas las ramas y resaltará en cuál estás actualmente. 😮
 ![git_branch](img/git_branch.png)
 
-* Paso3: Crear la rama con el comando:
+* Paso3: Crear la rama con el comando: 👀
 
         git branch nombre_de_nueva_rama
 
-* Paso4: Cambiar de rama
+* Paso4: Cambiar de rama ✔️
 
         git switch nombre_de_nueva_rama
 
@@ -198,18 +200,18 @@ Esto mostrará todas las ramas y resaltará en cuál estás actualmente.
 
 ![new_rama](img/new_rama.png)
 
-### ¿Qué es un Merge?
+### ¿Qué es un Merge? ⚡
 
 Un merge en Git es la acción de combinar los cambios de una rama con otra rama, generalmente la rama principal del proyecto. 
 
 * Esto se hace para integrar el trabajo realizado en una rama de desarrollo con el resto del código, permitiendo que los cambios se fusionen de manera ordenada y sin conflictos en el proyecto principal.
 
-**Ventaja**
+🍀 **Ventaja**
  Es útil porque permite a los equipos trabajar en paralelo en diferentes aspectos del proyecto y luego unir sus contribuciones de manera controlada, manteniendo un historial de cambios claro y facilitando la colaboración entre desarrolladores.
 
 ![merge](img/merge.png)
 
-### ¿Cómo realizar un merge?
+### ¿Cómo realizar un merge? 🎬
 
 * Paso1: Asegurarse de estar en la rama que queremos fucionar los cambios. 
 
@@ -227,7 +229,7 @@ Es decir, si de nuestra rama local **"rama1"** queremos funionar a la rama princ
                 Los cambios de la otra rama se fusionarán en la rama actual y podrás continuar trabajando en ella.
 
 
-### ¿Qué es un conflicto en Git y cómo resolver?
+### ¿Qué es un conflicto en Git y cómo resolver? 💥
 
 Un conflicto en Git ocurre cuando dos cambios diferentes se realizan en las mismas líneas de un archivo en diferentes ramas. 
 
@@ -235,7 +237,7 @@ Esto puede suceder al fusionar ramas con cambios conflictivos. Git no puede dete
 
 ![conflicto_git](img/conflicto.jpeg)
 
-### Resolver conflicto()
+### 🐤 Resolver conflicto()
 
 * Localizar el archivo que tiene conflictos. Git nos mostrará los conflictos entre 
 
@@ -256,7 +258,7 @@ Esto puede suceder al fusionar ramas con cambios conflictivos. Git no puede dete
         git commit -m "Mensaje de commit". 
 Esto finaliza la fusión y resuelve el conflicto.
 
-### ¿Cómo eliminar una rama?
+### ¿Cómo eliminar una rama? 🌇
 
 * Paso1: Estar en una rama diferente a la que deseamos eliminar
 * Paso2: Eliminar
@@ -271,7 +273,7 @@ Esto finaliza la fusión y resuelve el conflicto.
 
 GitHub es una plataforma en línea donde los desarrolladores pueden almacenar y compartir su código de manera colaborativa.
 
-**Ventajas**
+**Ventajas** 💯
 
  1.Permite a los equipos de programadores trabajar juntos en proyectos de software.
  
@@ -283,7 +285,7 @@ GitHub es una plataforma en línea donde los desarrolladores pueden almacenar y 
 
  ![github](img/github.jpeg)
 
- ### ¿Son Git y GitHub lo mismo?
+ ### ¿Son Git y GitHub lo mismo? ❌
  No, Git y GitHub no son lo mismo. Git es un sistema de control de versiones distribuido, mientras que GitHub es una plataforma en línea que utiliza Git para alojar repositorios de código.
 
 ![git_github](img/git-github.png)
@@ -292,7 +294,7 @@ GitHub es una plataforma en línea donde los desarrolladores pueden almacenar y 
 
 Un repositorio remoto es una versión de tu proyecto de software alojada en un servidor en línea, 
 
-### Creando un repositorio remoto en GitHub
+### Creando un repositorio remoto en GitHub 🌟
 1. Accede a [GitHub.com](https://github.com/) en un navegador y haz clic en el + de la parte superior derecha de la pantalla para crear un nuevo repositorio.
 
 ![add_repo](img/inigithub.jpeg)
@@ -310,14 +312,14 @@ Tan pronto es creado el repositorio, GitHub muestra una página con una URL y al
 
 ![create](img/nrepo.png)
 
-Una vez creado el repositorio remoto, inicialmente se encuentra vacío, en otras palabras, sin archivos y sin carpetas, por lo que se copiará la primera línea de comando proporcionada por el propio GitHub.
+🍦 Una vez creado el repositorio remoto, inicialmente se encuentra vacío, en otras palabras, sin archivos y sin carpetas, por lo que se copiará la primera línea de comando proporcionada por el propio GitHub.
 Éste comando permitirá crear una dirección del repositorio remoto en la máquina local, siendo ejecutado a través del terminal y tendrá la siguiente estructura :
 
         $ git remote add origin git@github.com:TuUsuarioDeGitHub/NombreRepositorio.git
 
 *Por lo que ya podremos vincular el repositorio local con el repositorio remoto*
 
-### ¿Cómo clonar un repositorio remoto creado previamente?
+### ¿Cómo clonar un repositorio remoto creado previamente? 🔥
 
 1. Dirigirse al repositorio remoto y copiar su dirección ya sea la dirección HTTPS o SSH
 <pre>Dato curioso:
@@ -337,7 +339,7 @@ La diferencia principal está en la forma en que se autentica la conexión: HTTP
 
 ## Push, Pull y Pull Requests
 
-### ¿Qué es un Push?
+### ¿Qué es un Push? 💦
 Un "push" en Git es el acto de enviar tus cambios locales a un repositorio remoto. Esto actualiza el estado del repositorio remoto con tus cambios locales. 
 
 **Para ejecutar un "push", sigue estos pasos:**
@@ -358,7 +360,7 @@ Un "push" en Git es el acto de enviar tus cambios locales a un repositorio remot
          git push
 
 *Listo si presionamos Enter. Git enviará tus cambios locales al repositorio remoto especificado.*
-### Experimentos con git push
+### Experimentos con git push 👈
 * Establecer la conexión entre la rama local y la rama remota de forma predeterminada -u o --set-upstream:
 
          git push -u origin nombre_de_la_rama
@@ -379,12 +381,12 @@ Es una operación potencialmente peligrosa, ya que puede causar la pérdida de c
         git push -d origin nombre_rama
 
  *Es importante tener en cuenta que este comando no elimina la rama local correspondiente en tu máquina, solo elimina la rama remota en el repositorio remoto.*
-### ¿Qué es git pull?
+### ¿Qué es git pull? ✏️
 El comando git pull se utiliza para recuperar los cambios del repositorio remoto y fusionarlos automáticamente con tu rama local.
 
          git pull
 
-### Experimentos con git pull
+### Experimentos con git pull 👈
 
 * Para recuperar los cambios de la rama remota llamada main en el repositorio remoto y fusionarlos automáticamente con tu rama local actual. 
 
@@ -398,19 +400,19 @@ El comando git pull se utiliza para recuperar los cambios del repositorio remoto
 
         git pull --set-upstream origin nombre_de_rama
 
-Esto significa que cuando hagas un git pull en la rama local nombre_de_rama, Git sabrá que debe recuperar los cambios de la rama remota origin/nombre_de_rama.
+😎 Esto significa que cuando hagas un git pull en la rama local nombre_de_rama, Git sabrá que debe recuperar los cambios de la rama remota origin/nombre_de_rama.
 
 * Para traer varias rama hacia una sola indicando que ramas queremos traerlas
         
         git pull origin rama1 rama2 ramaN
 
-### ¿Qu+e es una Pull Request?
+### ¿Qué es una Pull Request? 🌟
 
 Una pull request o PR es una solicitud que un colaborador o miembro del equipo hace a los propietarios o compañeros del equipo de un repositorio en Git para que revisen y consideren los cambios realizados en una rama de código específica.
 
 *Las pull requests proporcionan un espacio para revisar el código, realizar pruebas y comentarios antes de fusionar los cambios, lo que ayuda a mantener la calidad del código y facilita la colaboración entre los miembros del equipo.*
 
-### ¿Cómo hacer una pull request?
+### ¿Cómo hacer una pull request? 🌾
 
 Una vez que envíe los cambios al repositorio, el botón Comparar y solicitar extracción aparecerá en GitHub.
 
@@ -422,7 +424,7 @@ Click it and you'll be taken to this screen:
 
 Abra una solicitud de extracción haciendo clic en el botón Create pull request . Esto permite a los colaboradores del repositorio revisar su contribución. Desde aquí, pueden fusionarlo si está bien, o pueden pedirle que haga algunos cambios.
 
-### ¿Cómo hacer una buena Pull Request?
+### ¿Cómo hacer una buena Pull Request? ☑️
 
 * Hacer pull request con commit pequeños ya que nos permite una mejor revisión entre todo el equipo.
 
@@ -430,7 +432,7 @@ Abra una solicitud de extracción haciendo clic en el botón Create pull request
 
 ## Git Flow
 
-### ¿Qué es Git Flow?
+### ¿Qué es Git Flow? ❄️
 
 Git Flow es un modelo de flujo de trabajo para Git que proporciona un conjunto de reglas y convenciones para organizar y gestionar el desarrollo de software de manera estructurada.
 
@@ -450,7 +452,7 @@ Git Flow es un modelo de flujo de trabajo para Git que proporciona un conjunto d
 
 ![git_flow](img/gitflow.png)
 
-## ¿Cómo inicializar git flow?
+## ¿Cómo inicializar git flow? 🎉
 
 Para inicializar poner:
 
@@ -479,10 +481,10 @@ Para añadir una rama remota con git flow:
 
 ## Buenas Prácticas en Git
 
-### ¿Con què frecuencia deberìa realizar un Commit?
+### ¿Con què frecuencia deberìa realizar un Commit? 🎯
 Realizar commits pequeños realizando funcionalidades pequeñas
 Esto no significa realizar commits sin sentido, como solo borrar un espacio y hacer commit.
-### ¿Cómo escribir Buenos commits?
+### ¿Cómo escribir Buenos commits? ✏️ 
 Usar hasta 50 caracteres como máximo para un mensaje de commit
 
 Por lo que las siguientes palabras nos ayudarán a redactar mejor los mensajes:
@@ -495,7 +497,7 @@ Por lo que las siguientes palabras nos ayudarán a redactar mejor los mensajes:
 
 * Remove: Significa que se elimina un archivo existente.
 
-### Escribir buenos nombres para las ramas
+### Escribir buenos nombres para las ramas 🌱
 
 Usar el nombre de la acción que se realiza en la rama como:
 
@@ -515,20 +517,20 @@ Ejemplo:
 
 ## Deshacer Cambios
 
-### ¿En qué momentos deshacemos cambios?
+### ¿En qué momentos deshacemos cambios? ✂️
 
 * Cuando el proyecto ya no funciona y queremos volver a un estado sin conflictos y empezr de nuevo.
 * Cuando queremos recuperar una parte del codigo anteriormente modificado
 * O cuando queremos recuperar archivos eliminados
 
-### Comandos destructivos y no destructivos
+### Comandos destructivos💥  y no destructivos 🌻
 
  **¿Qué es un comando destructivo y qué es un comando no destructivo en GI?**
 
  * Un comando destructivo es aquel que puede alterar o eliminar permanentemente el historial de cambios o datos en el repositorio. 
  * un comando no destructivo es aquel que no altera ni elimina permanentemente el historial de cambios o datos en el repositorio.
 
-### Comandos destructivos
+### Comandos destructivos 🔥
 
  ### Git Reset
  se utiliza para mover la punta de una rama a un commit específico, lo que puede tener diferentes efectos según la opción que se le pase.
@@ -541,7 +543,7 @@ Ejemplo:
 
         git reset --soft id_commit
 
-### Comandos no destructivos
+### Comandos no destructivos 💦
 
 ### Git Revert
 
@@ -563,7 +565,7 @@ Comando:
 
 El comando git revert HEAD~9 es una forma de revertir el noveno commit anterior al commit actual en tu rama. 
         
-### Git Checkout
+### Git Checkout ☑️
 
 * Se utiliza para hacer cambios en los archivos
 
@@ -580,7 +582,7 @@ El comando git revert HEAD~9 es una forma de revertir el noveno commit anterior 
 
 ## Hooks, Alias y trucos de Git
 
-### ¿Qué son los Hook?
+### ¿Qué son los Hook? 🔆
 
 Los "hooks" son como pequeños scripts o acciones que Git puede ejecutar automáticamente cuando ocurre un evento determinado, como hacer un commit o realizar un push. Estos scripts se colocan dentro de una carpeta llamada .git/hooks en tu repositorio Git.
 
@@ -588,7 +590,7 @@ Los "hooks" son como pequeños scripts o acciones que Git puede ejecutar automá
 
 ![hook](img/hook.png)
 
-### ¿Cómo crear mi propio hook?
+### ¿Cómo crear mi propio hook? 🍭
 
 * **Identifica el evento para el cual deseas crear el hook:**
 
@@ -614,11 +616,11 @@ Los "hooks" son como pequeños scripts o acciones que Git puede ejecutar automá
 
  Una vez que hayas creado tu hook, puedes probarlo realizando la acción que activa el evento específico. Por ejemplo, si has creado un hook pre-commit, intenta realizar un commit en tu repositorio y observa si se ejecuta tu hook.
 
-### ¿Qué es un Git Alias?
+### ¿Qué es un Git Alias? 😼
 
 Un Alias en Git es una manera de crear un atajo o un nombre corto para un comando Git largo o complejo. En lugar de tener que escribir el comando completo cada vez que lo necesitemos, puedemos asignarle un alias para que puedamos usar ese alias en su lugar.
 
-### Crear un Git Alias
+### Crear un Git Alias 🌟
 
          git config --global alias.nombre_del_alias commando
 
@@ -626,7 +628,7 @@ Un Alias en Git es una manera de crear un atajo o un nombre corto para un comand
 
          git config --global alias.co 'checkout'
 
-### Eliminar Git ALias
+### Eliminar Git ALias ❌
 
          git config --global --unset alias.nombre_del_alias
 
@@ -635,11 +637,11 @@ Un Alias en Git es una manera de crear un atajo o un nombre corto para un comand
          git config --global --unset alias.co
 
 
-### Trucos en Git
+### Trucos en Git 🎪
 
 Los trucos en git nos permiten mejorar el flujo de trabajo con Git o nos permiten realizar ciertas tareas de manera más eficiente.
 
-**RESERVA STASH**
+**RESERVA STASH** 🚩
 
 * Oculta los cambios no confirmados, guardándolos en una pila de cambios temporales llamada "stash" o reserva
 
@@ -657,7 +659,7 @@ Los trucos en git nos permiten mejorar el flujo de trabajo con Git o nos permite
 
         git cherry-pick identificador_del_commit
 
-**Dectectar commits con bug:**
+**Dectectar commits con bug:** 🐾
 
          git bisect
 
@@ -683,8 +685,7 @@ Finalizar el proceso de bisect:
 
          git bisect reset  
 
-
-
+![gracias](img/gracias.jpeg)
 
 
 
